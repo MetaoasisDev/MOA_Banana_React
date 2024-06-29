@@ -16,10 +16,10 @@ const App = () => {
 
 
   const { unityProvider ,sendMessage ,addEventListener ,removeEventListener } = useUnityContext({
-    loaderUrl: "https://lys-test.s3.ap-northeast-2.amazonaws.com/MOA_Version1/Build.loader.js",
-    dataUrl: "https://lys-test.s3.ap-northeast-2.amazonaws.com/MOA_Version1/Build.data",
-    frameworkUrl: "https://lys-test.s3.ap-northeast-2.amazonaws.com/MOA_Version1/Build.framework.js",
-    codeUrl: "https://lys-test.s3.ap-northeast-2.amazonaws.com/MOA_Version1/Build.wasm",
+    loaderUrl: "https://lys-test.s3.ap-northeast-2.amazonaws.com/MOA_Version2/Build.loader.js",
+    dataUrl: "https://lys-test.s3.ap-northeast-2.amazonaws.com/MOA_Version2/Build.data",
+    frameworkUrl: "https://lys-test.s3.ap-northeast-2.amazonaws.com/MOA_Version2/Build.framework.js",
+    codeUrl: "https://lys-test.s3.ap-northeast-2.amazonaws.com/MOA_Version2/Build.wasm",
   });
 
   const TestUnityMessage = () => {
