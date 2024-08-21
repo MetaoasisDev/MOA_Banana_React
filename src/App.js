@@ -40,10 +40,10 @@ const App = () => {
     window.Telegram.WebApp.openLink("https://t.me/METAOASIS_CHAT");
   };
   const OpenUrl4 = () => {
-    window.Telegram.WebApp.OpenUrl("https://discord.com/invite/metaoasisvr");
+    window.Telegram.WebApp.openLink("https://discord.com/invite/metaoasisvr");
   };
   const OpenUrl5 = () => {
-    window.Telegram.WebApp.OpenUrl("https://www.meoasis.com/");
+    window.Telegram.WebApp.openLink("https://www.meoasis.com/");
   };
 
 
@@ -71,8 +71,8 @@ const App = () => {
     addEventListener('OpenUrl',OpenUrl);
     addEventListener('OpenUrl2',OpenUrl2);
     addEventListener('OpenUrl3',OpenUrl3);
-    addEventListener('OpenUrl3',OpenUrl4);
-    addEventListener('OpenUrl3',OpenUrl5);
+    addEventListener('OpenUrl4',OpenUrl4);
+    addEventListener('OpenUrl5',OpenUrl5);
     return () => {
       removeEventListener('TakeTokenFromReact',TestUnityMessage)
       removeEventListener('MobileVibrate',handleVibrate)
@@ -80,8 +80,8 @@ const App = () => {
       removeEventListener('OpenUrl',OpenUrl)
       removeEventListener('OpenUrl2',OpenUrl2)
       removeEventListener('OpenUrl3',OpenUrl3)
-      removeEventListener('OpenUrl3',OpenUrl4)
-      removeEventListener('OpenUrl3',OpenUrl5)
+      removeEventListener('OpenUrl4',OpenUrl4)
+      removeEventListener('OpenUrl5',OpenUrl5)
     }
 
   },[addEventListener,removeEventListener,TestUnityMessage,handleCopyClipBoard,OpenUrl])
