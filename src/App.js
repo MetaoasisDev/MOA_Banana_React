@@ -31,7 +31,13 @@ const App = () => {
   };
 
   const OpenUrl = () => {
-    window.open("https://twitter.com/Tonny_io");
+    window.Telegram.WebApp.openLink("https://x.com/MetaOasisVR");
+  };
+  const OpenUrl2 = () => {
+    window.Telegram.WebApp.openLink("https://www.youtube.com/watch?v=m-kiWzkuolU");
+  };
+  const OpenUrl3 = () => {
+    //window.Telegram.WebApp.openLink("https://t.me/tonny_community");
   };
 
   const handleCopyClipBoard = (text_s) => {
@@ -58,11 +64,15 @@ const App = () => {
     addEventListener('MobileVibrate',handleVibrate);
     addEventListener('handleCopyClipBoard',handleCopyClipBoard);
     addEventListener('OpenUrl',OpenUrl);
+    addEventListener('OpenUrl2',OpenUrl2);
+    addEventListener('OpenUrl3',OpenUrl3);
     return () => {
       removeEventListener('TakeTokenFromReact',TestUnityMessage)
       removeEventListener('MobileVibrate',handleVibrate)
       removeEventListener('handleCopyClipBoard',handleCopyClipBoard)
       removeEventListener('OpenUrl',OpenUrl)
+      removeEventListener('OpenUrl2',OpenUrl2)
+      removeEventListener('OpenUrl3',OpenUrl3)
     }
 
   },[addEventListener,removeEventListener,TestUnityMessage,handleCopyClipBoard,OpenUrl])
