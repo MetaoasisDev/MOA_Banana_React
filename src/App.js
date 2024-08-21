@@ -16,10 +16,10 @@ const App = () => {
 
 
   const { unityProvider ,sendMessage ,addEventListener ,removeEventListener } = useUnityContext({
-    loaderUrl: "https://lys-test.s3.ap-northeast-2.amazonaws.com/Version36/Build.loader.js",
-    dataUrl: "https://lys-test.s3.ap-northeast-2.amazonaws.com/Version36/Build.data",
-    frameworkUrl: "https://lys-test.s3.ap-northeast-2.amazonaws.com/Version36/Build.framework.js",
-    codeUrl: "https://lys-test.s3.ap-northeast-2.amazonaws.com/Version36/Build.wasm",
+    loaderUrl: "https://d3c9jx2zokz1rn.cloudfront.net/web-build/banana-v3/Build.loader.js",
+    dataUrl: "https://d3c9jx2zokz1rn.cloudfront.net/web-build/banana-v3/Build.data",
+    frameworkUrl: "https://d3c9jx2zokz1rn.cloudfront.net/web-build/banana-v3/Build.framework.js",
+    codeUrl: "https://d3c9jx2zokz1rn.cloudfront.net/web-build/banana-v3/Build.wasm",
   });
 
   const TestUnityMessage = () => {
@@ -34,17 +34,22 @@ const App = () => {
     window.Telegram.WebApp.openLink("https://x.com/MetaOasisVR");
   };
   const OpenUrl2 = () => {
-    window.Telegram.WebApp.openLink("https://www.youtube.com/watch?v=m-kiWzkuolU");
+    window.Telegram.WebApp.openLink("https://x.com/Dicaprio_Eth");
   };
   const OpenUrl3 = () => {
-    //window.Telegram.WebApp.openLink("https://t.me/tonny_community");
+    window.Telegram.WebApp.openLink("https://t.me/METAOASIS_CHAT");
   };
+  const OpenUrl4 = () => {
+    window.Telegram.WebApp.openLink("https://discord.com/invite/metaoasisvr");
+  };
+  const OpenUrl5 = () => {
+    window.Telegram.WebApp.openLink("https://www.meoasis.com/");
+  };
+
 
   const handleCopyClipBoard = (text_s) => {
     //   navigator.clipboard.writeText(text_s);
     //  document.execCommand('copy', true, text_s);
-
-
 
      const element = document.createElement('textarea');
      element.value = text_s;
@@ -55,7 +60,7 @@ const App = () => {
      element.select();
      const copyValue = document.execCommand('copy');
      document.body.removeChild(element);
-
+c
   };
 
 
@@ -66,6 +71,8 @@ const App = () => {
     addEventListener('OpenUrl',OpenUrl);
     addEventListener('OpenUrl2',OpenUrl2);
     addEventListener('OpenUrl3',OpenUrl3);
+    addEventListener('OpenUrl3',OpenUrl4);
+    addEventListener('OpenUrl3',OpenUrl5);
     return () => {
       removeEventListener('TakeTokenFromReact',TestUnityMessage)
       removeEventListener('MobileVibrate',handleVibrate)
@@ -73,6 +80,8 @@ const App = () => {
       removeEventListener('OpenUrl',OpenUrl)
       removeEventListener('OpenUrl2',OpenUrl2)
       removeEventListener('OpenUrl3',OpenUrl3)
+      removeEventListener('OpenUrl3',OpenUrl4)
+      removeEventListener('OpenUrl3',OpenUrl5)
     }
 
   },[addEventListener,removeEventListener,TestUnityMessage,handleCopyClipBoard,OpenUrl])
