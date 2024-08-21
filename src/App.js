@@ -60,7 +60,7 @@ const App = () => {
      element.select();
      const copyValue = document.execCommand('copy');
      document.body.removeChild(element);
-c
+
   };
 
 
