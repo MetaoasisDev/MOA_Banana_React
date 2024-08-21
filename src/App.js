@@ -40,10 +40,10 @@ const App = () => {
     window.Telegram.WebApp.openLink("https://t.me/METAOASIS_CHAT");
   };
   const OpenUrl4 = () => {
-    window.Telegram.WebApp.openLink("https://discord.com/invite/metaoasisvr");
+    window.Telegram.WebApp.openTelegramLink("https://discord.com/invite/metaoasisvr");
   };
   const OpenUrl5 = () => {
-    window.Telegram.WebApp.openLink("https://www.meoasis.com/");
+    window.Telegram.WebApp.openTelegramLink("https://www.meoasis.com/");
   };
 
 
