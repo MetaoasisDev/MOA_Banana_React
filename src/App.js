@@ -4,16 +4,18 @@ import "./App.css";
 import { Unity, useUnityContext } from "react-unity-webgl";
 import {CopyToClipboard} from 'react-copy-to-clipboard';
 import { View, Button, Vibration } from 'react-native';
+import { TonConnectUI } from '@tonconnect/ui-react';
 
 
+const connectorUi = new TonConnectUI({
+  manifestUrl: 'https://lys-test.s3.ap-northeast-2.amazonaws.com/tonconnect-manifest.json'
+});
 
 const App = () => {
   
   window.Telegram.WebApp.expand();
 
   const root = document.querySelector("#root");
-
-
 
   const { unityProvider ,sendMessage ,addEventListener ,removeEventListener } = useUnityContext({
     loaderUrl: "https://d3c9jx2zokz1rn.cloudfront.net/web-build/banana-v13/Build.loader.js",
@@ -25,6 +27,7 @@ const App = () => {
   const TestUnityMessage = () => {
     sendMessage('SendReactManager' , 'ReciveUnity' , document.location.pathname)
   }
+
 
   const handleVibrate = () => {
     Vibration.vibrate(100); 
@@ -47,8 +50,27 @@ const App = () => {
   };
 
   const WalletConnect = () => {
-    //여기서 지갑 연결 호출 
+    GetWaleltConnect();
   };
+
+  async function GetWaleltConnect() {
+    if(connectorUi.connected){
+      connectorUi.disconnect();
+    }
+
+    await connectorUi.openModal();
+
+    const unsubscribe = connectorUi.onModalStateChange(
+      state => {
+        
+        sendMessage('SendReactManager' , 'ReciveWalletAddr' ,connectorUi.account.address);
+        connectorUi.closeModal();
+        unsubscribe();
+      }
+    );
+   
+  }
+
 
 
   const handleCopyClipBoard = (text_s) => {
