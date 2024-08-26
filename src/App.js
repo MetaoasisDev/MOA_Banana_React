@@ -46,6 +46,10 @@ const App = () => {
     window.Telegram.WebApp.openLink("https://www.meoasis.com/");
   };
 
+  const WalletConnect = () => {
+    //여기서 지갑 연결 호출 
+  };
+
 
   const handleCopyClipBoard = (text_s) => {
     //   navigator.clipboard.writeText(text_s);
@@ -73,6 +77,7 @@ const App = () => {
     addEventListener('OpenUrl3',OpenUrl3);
     addEventListener('OpenUrl4',OpenUrl4);
     addEventListener('OpenUrl5',OpenUrl5);
+    addEventListener('WalletConnect',WalletConnect);
     return () => {
       removeEventListener('TakeTokenFromReact',TestUnityMessage)
       removeEventListener('MobileVibrate',handleVibrate)
@@ -82,9 +87,10 @@ const App = () => {
       removeEventListener('OpenUrl3',OpenUrl3)
       removeEventListener('OpenUrl4',OpenUrl4)
       removeEventListener('OpenUrl5',OpenUrl5)
+      removeEventListener('WalletConnect',WalletConnect)
     }
 
-  },[addEventListener,removeEventListener,TestUnityMessage,handleCopyClipBoard,OpenUrl])
+  },[addEventListener,removeEventListener,TestUnityMessage,handleCopyClipBoard,OpenUrl,WalletConnect])
 
   return (
 
