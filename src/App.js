@@ -16,10 +16,10 @@ const App = () => {
 
 
   const { unityProvider ,sendMessage ,addEventListener ,removeEventListener } = useUnityContext({
-    loaderUrl: "https://d3c9jx2zokz1rn.cloudfront.net/web-build/banana-v10/Build.loader.js",
-    dataUrl: "https://d3c9jx2zokz1rn.cloudfront.net/web-build/banana-v10/Build.data",
-    frameworkUrl: "https://d3c9jx2zokz1rn.cloudfront.net/web-build/banana-v10/Build.framework.js",
-    codeUrl: "https://d3c9jx2zokz1rn.cloudfront.net/web-build/banana-v10/Build.wasm",
+    loaderUrl: "https://d3c9jx2zokz1rn.cloudfront.net/web-build/banana-v11/Build.loader.js",
+    dataUrl: "https://d3c9jx2zokz1rn.cloudfront.net/web-build/banana-v11/Build.data",
+    frameworkUrl: "https://d3c9jx2zokz1rn.cloudfront.net/web-build/banana-v11/Build.framework.js",
+    codeUrl: "https://d3c9jx2zokz1rn.cloudfront.net/web-build/banana-v11/Build.wasm",
   });
 
   const TestUnityMessage = () => {
