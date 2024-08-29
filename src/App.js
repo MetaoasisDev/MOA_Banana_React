@@ -50,7 +50,8 @@ const App = () => {
   };
 
   const Shop_Assistant = () =>{
-
+    //아래는 성공후 유니티로 보내는 방법 
+    //sendMessage('SendReactManager' , 'ReciveShopItem' ,아이템 번호 , 영수증string);
   };
   
   const Shop_Manager = () =>{
