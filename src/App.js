@@ -49,7 +49,7 @@ const App = () => {
     window.Telegram.WebApp.openLink("https://www.meoasis.com/");
   };
 
-  const Shop_Pirate = () =>{
+  const Shop_Assistant = () =>{
 
   };
   
