@@ -18,10 +18,10 @@ const App = () => {
   const root = document.querySelector("#root");
 
   const { unityProvider ,sendMessage ,addEventListener ,removeEventListener } = useUnityContext({
-    loaderUrl: "https://lys-test.s3.ap-northeast-2.amazonaws.com/BananaTest01/Build.loader.js",
-    dataUrl: "https://lys-test.s3.ap-northeast-2.amazonaws.com/BananaTest01/Build.data",
-    frameworkUrl: "https://lys-test.s3.ap-northeast-2.amazonaws.com/BananaTest01/Build.framework.js",
-    codeUrl: "https://lys-test.s3.ap-northeast-2.amazonaws.com/BananaTest01/Build.wasm",
+    loaderUrl: "https://d3c9jx2zokz1rn.cloudfront.net/web-build/banana-v18/Build.loader.js",
+    dataUrl: "https://d3c9jx2zokz1rn.cloudfront.net/web-build/banana-v18/Build.data",
+    frameworkUrl: "https://d3c9jx2zokz1rn.cloudfront.net/web-build/banana-v18/Build.framework.js",
+    codeUrl: "https://d3c9jx2zokz1rn.cloudfront.net/web-build/banana-v18/Build.wasm",
   });
 
   const TestUnityMessage = () => {
