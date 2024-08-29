@@ -51,27 +51,27 @@ const App = () => {
 
   const Shop_Assistant = () =>{
     //아래는 성공후 유니티로 보내는 방법 
-    //sendMessage('SendReactManager' , 'ReciveShopItem' ,아이템 번호 , 영수증string);
+    //sendMessage('SendReactManager' , 'ReciveShopItem' ,아이템 번호);
   };
   
-  const Shop_Manager = () =>{
-
+  const Shop_Manager = (str) =>{
+      console.log(str);
   };
 
-  const Shop_DieselTechnician = () =>{
-
+  const Shop_DieselTechnician = (str) =>{
+    console.log(str);
   };
 
-  const Shop_HarvestHelp = () =>{
-
+  const Shop_HarvestHelp = (str) =>{
+    console.log(str);
   };
 
-  const Shop_Farmer = () =>{
-
+  const Shop_Farmer = (str) =>{
+    console.log(str);
   };
 
-  const Shop_CoinParty =()=>{
-
+  const Shop_CoinParty =(str)=>{
+    console.log(str);
   };
 
 
