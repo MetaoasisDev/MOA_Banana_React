@@ -72,6 +72,8 @@ const App = () => {
   const Shop_CoinParty =()=>{
 
   };
+
+
   
   const WalletConnect = () => {
     GetWaleltConnect();
@@ -124,6 +126,14 @@ const App = () => {
     addEventListener('OpenUrl4',OpenUrl4);
     addEventListener('OpenUrl5',OpenUrl5);
     addEventListener('WalletConnect',WalletConnect);
+
+    addEventListener('WalletConnect',Shop_Assistant);
+    addEventListener('WalletConnect',Shop_Manager);
+    addEventListener('WalletConnect',Shop_DieselTechnician);
+    addEventListener('WalletConnect',Shop_HarvestHelp);
+    addEventListener('WalletConnect',Shop_Farmer);
+    addEventListener('WalletConnect',Shop_CoinParty);
+
     return () => {
       removeEventListener('TakeTokenFromReact',TestUnityMessage)
       removeEventListener('MobileVibrate',handleVibrate)
@@ -134,9 +144,19 @@ const App = () => {
       removeEventListener('OpenUrl4',OpenUrl4)
       removeEventListener('OpenUrl5',OpenUrl5)
       removeEventListener('WalletConnect',WalletConnect)
+
+      removeEventListener('WalletConnect',Shop_Assistant)
+      removeEventListener('WalletConnect',Shop_Manager)
+      removeEventListener('WalletConnect',Shop_DieselTechnician)
+      removeEventListener('WalletConnect',Shop_HarvestHelp)
+      removeEventListener('WalletConnect',Shop_Farmer)
+      removeEventListener('WalletConnect',Shop_CoinParty)
+
     }
 
-  },[addEventListener,removeEventListener,TestUnityMessage,handleCopyClipBoard,OpenUrl,WalletConnect])
+  },[addEventListener,removeEventListener,TestUnityMessage,handleCopyClipBoard,OpenUrl,WalletConnect,
+    Shop_Assistant,Shop_Manager,Shop_DieselTechnician,Shop_HarvestHelp,Shop_Farmer,Shop_CoinParty,
+  ])
 
   return (
 
