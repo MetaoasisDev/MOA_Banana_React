@@ -69,6 +69,9 @@ const App = () => {
 
   };
 
+  const Shop_CoinParty =()=>{
+
+  };
   
   const WalletConnect = () => {
     GetWaleltConnect();
