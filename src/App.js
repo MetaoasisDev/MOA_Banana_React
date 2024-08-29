@@ -49,6 +49,27 @@ const App = () => {
     window.Telegram.WebApp.openLink("https://www.meoasis.com/");
   };
 
+  const Shop_Pirate = () =>{
+
+  };
+  
+  const Shop_Manager = () =>{
+
+  };
+
+  const Shop_DieselTechnician = () =>{
+
+  };
+
+  const Shop_HarvestHelp = () =>{
+
+  };
+
+  const Shop_Farmer = () =>{
+
+  };
+
+  
   const WalletConnect = () => {
     GetWaleltConnect();
   };
