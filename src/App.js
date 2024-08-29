@@ -128,12 +128,12 @@ const App = () => {
     addEventListener('OpenUrl5',OpenUrl5);
     addEventListener('WalletConnect',WalletConnect);
 
-    addEventListener('WalletConnect',Shop_Assistant);
-    addEventListener('WalletConnect',Shop_Manager);
-    addEventListener('WalletConnect',Shop_DieselTechnician);
-    addEventListener('WalletConnect',Shop_HarvestHelp);
-    addEventListener('WalletConnect',Shop_Farmer);
-    addEventListener('WalletConnect',Shop_CoinParty);
+    addEventListener('Shop_Assistant',Shop_Assistant);
+    addEventListener('Shop_Manager',Shop_Manager);
+    addEventListener('Shop_DieselTechnician',Shop_DieselTechnician);
+    addEventListener('Shop_HarvestHelp',Shop_HarvestHelp);
+    addEventListener('Shop_Farmer',Shop_Farmer);
+    addEventListener('Shop_CoinParty',Shop_CoinParty);
 
     return () => {
       removeEventListener('TakeTokenFromReact',TestUnityMessage)
@@ -146,12 +146,12 @@ const App = () => {
       removeEventListener('OpenUrl5',OpenUrl5)
       removeEventListener('WalletConnect',WalletConnect)
 
-      removeEventListener('WalletConnect',Shop_Assistant)
-      removeEventListener('WalletConnect',Shop_Manager)
-      removeEventListener('WalletConnect',Shop_DieselTechnician)
-      removeEventListener('WalletConnect',Shop_HarvestHelp)
-      removeEventListener('WalletConnect',Shop_Farmer)
-      removeEventListener('WalletConnect',Shop_CoinParty)
+      removeEventListener('Shop_Assistant',Shop_Assistant)
+      removeEventListener('Shop_Manager',Shop_Manager)
+      removeEventListener('Shop_DieselTechnician',Shop_DieselTechnician)
+      removeEventListener('Shop_HarvestHelp',Shop_HarvestHelp)
+      removeEventListener('Shop_Farmer',Shop_Farmer)
+      removeEventListener('Shop_CoinParty',Shop_CoinParty)
 
     }
 
