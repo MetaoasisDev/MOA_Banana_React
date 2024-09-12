@@ -7,7 +7,7 @@ import { View, Button, Vibration } from 'react-native';
 import { TonConnectUI } from '@tonconnect/ui-react';
 
 const isDev = false;
-const liveVersion = "banana-v19";
+const liveVersion = "banana-v20";
 const devVersion = "Payment2";
 
 const liveUrl = "https://d3c9jx2zokz1rn.cloudfront.net/web-build";
