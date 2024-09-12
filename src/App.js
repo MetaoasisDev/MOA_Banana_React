@@ -6,6 +6,12 @@ import {CopyToClipboard} from 'react-copy-to-clipboard';
 import { View, Button, Vibration } from 'react-native';
 import { TonConnectUI } from '@tonconnect/ui-react';
 
+const isDev = false;
+const liveVersion = "banana-v19";
+const devVersion = "Payment2";
+
+const liveUrl = "https://d3c9jx2zokz1rn.cloudfront.net/web-build";
+const devUrl = "https://lys-test.s3.ap-northeast-2.amazonaws.com";
 
 const connectorUi = new TonConnectUI({
   manifestUrl: 'https://lys-test.s3.ap-northeast-2.amazonaws.com/tonconnect-manifest.json'
@@ -15,13 +21,14 @@ const App = () => {
   
   window.Telegram.WebApp.expand();
 
+  const currentUrl = `${(isDev ? devUrl : liveUrl)}/${(isDev ? devVersion : liveVersion)}`;
   const root = document.querySelector("#root");
 
   const { unityProvider ,sendMessage ,addEventListener ,removeEventListener } = useUnityContext({
-    loaderUrl: "https://lys-test.s3.ap-northeast-2.amazonaws.com/Version43/Build.loader.js",
-    dataUrl: "https://lys-test.s3.ap-northeast-2.amazonaws.com/Version43/Build.data",
-    frameworkUrl: "https://lys-test.s3.ap-northeast-2.amazonaws.com/Version43/Build.framework.js",
-    codeUrl: "https://lys-test.s3.ap-northeast-2.amazonaws.com/Version43/Build.wasm",
+    loaderUrl: `${currentUrl}/Build.loader.js`,
+    dataUrl: `${currentUrl}/Build.data`,
+    frameworkUrl: `${currentUrl}/Build.framework.js`,
+    codeUrl: `${currentUrl}/Build.wasm`,
   });
 
   const TestUnityMessage = () => {
@@ -49,32 +56,41 @@ const App = () => {
     window.Telegram.WebApp.openLink("https://www.meoasis.com/");
   };
 
-  const Shop_Assistant = () =>{
-    //아래는 성공후 유니티로 보내는 방법 
-    //sendMessage('SendReactManager' , 'ReciveShopItem' ,아이템 번호);
+  const Shop_CoinParty =(str)=>{
+    openInvoiceAndPayment(str, 2);
+  };
+
+  const Shop_Assistant = (str) =>{
+    openInvoiceAndPayment(str, 3);
   };
   
   const Shop_Manager = (str) =>{
-      console.log(str);
+    openInvoiceAndPayment(str, 4);
   };
 
   const Shop_DieselTechnician = (str) =>{
-    console.log(str);
+    openInvoiceAndPayment(str, 5);
   };
 
   const Shop_HarvestHelp = (str) =>{
-    console.log(str);
+    openInvoiceAndPayment(str, 6);
   };
 
   const Shop_Farmer = (str) =>{
-    console.log(str);
+    openInvoiceAndPayment(str, 7);
   };
 
-  const Shop_CoinParty =(str)=>{
-    console.log(str);
-  };
+  function openInvoiceAndPayment(url, itemNum) {
+     window.Telegram.WebApp.openInvoice(url, event => {
+       if (event === 'cancelled' || event === 'failed') {
+         sendMessage('SendReactManager', 'ReciveShopItem', -1);
+       }
 
-
+       if (event === 'paid') {
+         sendMessage('SendReactManager', 'ReciveShopItem', itemNum);
+       }
+     });
+  }
   
   const WalletConnect = () => {
     GetWaleltConnect();
