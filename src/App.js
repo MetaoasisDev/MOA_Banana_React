@@ -33,7 +33,7 @@ const App = () => {
 
   const TestUnityMessage = () => {
     let initData = window.Telegram.WebApp.initDataUnsafe;
-    const userData = `/${initData.user.id}/${initData.user.username}/undefined/${initData.start_param}`;
+    const userData = `/${initData.user.id}/${initData.user.username}/${initData.start_param}/undefined`;
     sendMessage('SendReactManager' , 'ReciveUnity' , userData);
   }
 
