@@ -105,13 +105,21 @@ const App = () => {
 
     const web3 = new Web3('https://bsc-dataseed.binance.org/');
 
+    try {
+      // Binance Wallet 연결
       await window.BinanceChain.enable();
-      const accounts = await window.BinanceChain.request({ method: 'eth_requestAccounts' });
-   
 
+      // 계정 가져오기
+      const accounts = await window.BinanceChain.request({ method: 'eth_requestAccounts' });
+      console.log('Connected Binance Wallet Address:', accounts[0]);
+
+      // 잔액 가져오기
       const balance = await web3.eth.getBalance(accounts[0]);
-      
-  };
+      console.log('Balance:', web3.utils.fromWei(balance, 'ether'), 'BNB');
+    } catch (error) {
+      console.error('Error connecting Binance Wallet:', error);
+    }
+  } 
 
   
 
