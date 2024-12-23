@@ -98,6 +98,13 @@ const App = () => {
        }
      });
   }
+
+  function getLibrary(){
+    const library = new Web3Provider(provider)
+    library.pollingInterval = 12000
+    return library
+  }
+
   
   const WalletConnect = () => {
     binanceConnector();
@@ -207,6 +214,9 @@ const App = () => {
           
       }} unityProvider={unityProvider}/>
 
+    <Web3ReactProvider getLibrary={getLibrary}>
+      <App />
+    </Web3ReactProvider>
   </div>
 
   ) ;
