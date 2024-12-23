@@ -6,8 +6,6 @@ import {CopyToClipboard} from 'react-copy-to-clipboard';
 import { View, Button, Vibration } from 'react-native';
 import { TonConnectUI } from '@tonconnect/ui-react';
 
-import Web3 from 'web3'
-
 const isDev = false;
 const liveVersion = "banana-v21";
 const devVersion = "Payment2";
@@ -99,28 +97,8 @@ const App = () => {
 
   
   const WalletConnect = () => {
-    connectBinanceWallet();
+    GetWaleltConnect();
   };
-  const connectBinanceWallet = async () => {
-
-    const web3 = new Web3('https://bsc-dataseed.binance.org/');
-
-    try {
-      // Binance Wallet 연결
-      await window.BinanceChain.enable();
-
-      // 계정 가져오기
-      const accounts = await window.BinanceChain.request({ method: 'eth_requestAccounts' });
-      console.log('Connected Binance Wallet Address:', accounts[0]);
-
-      // 잔액 가져오기
-      const balance = await web3.eth.getBalance(accounts[0]);
-      console.log('Balance:', web3.utils.fromWei(balance, 'ether'), 'BNB');
-    } catch (error) {
-      console.error('Error connecting Binance Wallet:', error);
-    }
-  } 
-
   
 
 
