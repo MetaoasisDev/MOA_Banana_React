@@ -20,7 +20,6 @@ const connectorUi = new TonConnectUI({
 });
 
 const App = () => {
-  
 
   window.Telegram.WebApp.expand();
 
@@ -103,23 +102,18 @@ const App = () => {
     connectBinanceWallet();
   };
   const connectBinanceWallet = async () => {
-    if (typeof window.BinanceChain !== 'undefined') {
-      const web3 = new Web3('https://bsc-dataseed.binance.org/');
 
-      try {
-        // Binance Wallet 연결
-        await window.BinanceChain.enable();
+    const web3 = new Web3('https://bsc-dataseed.binance.org/');
 
+      await window.BinanceChain.enable();
+      const accounts = await window.BinanceChain.request({ method: 'eth_requestAccounts' });
+   
 
-
- 
-      } catch (error) {
-        console.error('Error connecting Binance Wallet:', error);
-      }
-    } else {
-      console.error('Binance Chain Wallet is not installed.');
-    }
+      const balance = await web3.eth.getBalance(accounts[0]);
+      
   };
+
+  
 
 
   async function GetWaleltConnect() {
