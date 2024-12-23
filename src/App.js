@@ -6,6 +6,11 @@ import {CopyToClipboard} from 'react-copy-to-clipboard';
 import { View, Button, Vibration } from 'react-native';
 import { TonConnectUI } from '@tonconnect/ui-react';
 
+import { getWeb3Connector } from '@binance/w3w-web3-connector'
+import { Web3Provider } from '@ethersproject/providers'
+import { Web3ReactProvider, useWeb3React } from '@web3-react/core'
+
+
 const isDev = false;
 const liveVersion = "banana-v21";
 const devVersion = "Payment2";
@@ -95,8 +100,19 @@ const App = () => {
   }
   
   const WalletConnect = () => {
-    GetWaleltConnect();
+    binanceConnector();
   };
+
+  const Connector = getWeb3Connector()
+
+  const binanceConnector = new Connector({
+    lng: 'zh-CN',
+    supportedChainIds: [1, 56],
+    rpc:{
+      56: 'https://bsc-dataseed.binance.org/'
+    }
+  })
+
 
   async function GetWaleltConnect() {
     if(connectorUi.connected){
