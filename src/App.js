@@ -6,11 +6,6 @@ import {CopyToClipboard} from 'react-copy-to-clipboard';
 import { View, Button, Vibration } from 'react-native';
 import { TonConnectUI } from '@tonconnect/ui-react';
 
-import { getWeb3Connector } from '@binance/w3w-web3-connector'
-import { Web3Provider } from '@ethersproject/providers'
-import { Web3ReactProvider, useWeb3React } from '@web3-react/core'
-
-
 const isDev = false;
 const liveVersion = "banana-v21";
 const devVersion = "Payment2";
@@ -24,6 +19,7 @@ const connectorUi = new TonConnectUI({
 
 const App = () => {
   
+
   window.Telegram.WebApp.expand();
 
   const currentUrl = `${(isDev ? devUrl : liveUrl)}/${(isDev ? devVersion : liveVersion)}`;
@@ -99,26 +95,11 @@ const App = () => {
      });
   }
 
-  function getLibrary(){
-    const library = new Web3Provider(provider)
-    library.pollingInterval = 12000
-    return library
-  }
-
   
   const WalletConnect = () => {
-    binanceConnector();
+    GetWaleltConnect();
   };
 
-  const Connector = getWeb3Connector()
-
-  const binanceConnector = new Connector({
-    lng: 'zh-CN',
-    supportedChainIds: [1, 56],
-    rpc:{
-      56: 'https://bsc-dataseed.binance.org/'
-    }
-  })
 
 
   async function GetWaleltConnect() {
@@ -214,9 +195,6 @@ const App = () => {
           
       }} unityProvider={unityProvider}/>
 
-    <Web3ReactProvider getLibrary={getLibrary}>
-      <App />
-    </Web3ReactProvider>
   </div>
 
   ) ;
