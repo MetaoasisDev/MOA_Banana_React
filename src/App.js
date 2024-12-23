@@ -6,6 +6,8 @@ import {CopyToClipboard} from 'react-copy-to-clipboard';
 import { View, Button, Vibration } from 'react-native';
 import { TonConnectUI } from '@tonconnect/ui-react';
 
+import Web3 from 'web3'
+
 const isDev = false;
 const liveVersion = "banana-v21";
 const devVersion = "Payment2";
@@ -84,6 +86,7 @@ const App = () => {
   };
 
   function openInvoiceAndPayment(url, itemNum) {
+
      window.Telegram.WebApp.openInvoice(url, event => {
        if (event === 'cancelled' || event === 'failed') {
          sendMessage('SendReactManager', 'ReciveShopItem', -1);
@@ -97,9 +100,26 @@ const App = () => {
 
   
   const WalletConnect = () => {
-    GetWaleltConnect();
+    connectBinanceWallet();
   };
+  const connectBinanceWallet = async () => {
+    if (typeof window.BinanceChain !== 'undefined') {
+      const web3 = new Web3('https://bsc-dataseed.binance.org/');
 
+      try {
+        // Binance Wallet 연결
+        await window.BinanceChain.enable();
+
+
+
+ 
+      } catch (error) {
+        console.error('Error connecting Binance Wallet:', error);
+      }
+    } else {
+      console.error('Binance Chain Wallet is not installed.');
+    }
+  };
 
 
   async function GetWaleltConnect() {
